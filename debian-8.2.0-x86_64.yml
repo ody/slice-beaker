@@ -1,0 +1,10 @@
+HOSTS:
+  debian8:
+    roles:
+      - master
+    platform: debian-8-x86_64
+    hypervisor: none
+    ip: 127.0.0.1
+CONFIG:
+  type: foss
+  set_env: false
