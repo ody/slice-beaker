@@ -10,7 +10,7 @@ MODULE   = ENV['MODULE'] || 'null'
 Vagrant.configure('2') do |config|
 
   config.vm.box               = 'dummy'
-  config.ssh.username         = PLATFORM
+  config.ssh.username         = PLATFORM.split('-')[0]
   config.ssh.pty              = true
   config.ssh.private_key_path = "#{ENV['HOME']}/.ssh/vagrant.pem"
 
@@ -21,7 +21,7 @@ Vagrant.configure('2') do |config|
     os.password           = ENV['OS_PASSWORD']
     os.tenant_name        = ENV['OS_PROJECT_NAME']
     os.flavor             = 'g1.medium'
-    os.image              = PLATFORM
+    os.image              = PLATFORM.gsub('-', '_')
     os.floating_ip_pool   = 'ext-net-pdx1-opdx1'
     os.keypair_name       = 'vagrant'
     os.security_groups    = ['sg0']
