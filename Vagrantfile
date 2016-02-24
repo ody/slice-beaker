@@ -19,7 +19,7 @@ Vagrant.configure('2') do |config|
     os.openstack_auth_url = ENV['OS_AUTH_URL']
     os.username           = ENV['OS_USERNAME']
     os.password           = ENV['OS_PASSWORD']
-    os.tenant_name        = ENV['OS_PROJECT_NAME']
+    os.tenant_name        = ENV['OS_TENANT_NAME']
     os.flavor             = 'g1.medium'
     os.image              = PLATFORM.gsub('-', '_')
     os.floating_ip_pool   = 'ext-net-pdx1-opdx1'
